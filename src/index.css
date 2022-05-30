@@ -188,3 +188,142 @@ footer div {
   align-items: center;
   margin: 0 0 20px;
 }
+
+.wrapper-table {
+  height: 92vh;
+  width: 100%;
+  padding: 2rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-table {
+  height: 40.8rem;
+  width: 80rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.row-end{
+  display: flex;
+  justify-content: end;
+  margin-right: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  /* margin: 25px 0; */
+  font-size: 1em;
+  min-width: 400px;
+  width: 100%;
+  border-radius:  5px 5px 0 0;
+  overflow: hidden;
+}
+
+table thead {
+  height: 60px;
+  background-color: #009879;
+  color: white;
+}
+
+table th td{
+  padding: 12px 15px;
+}
+
+table td {
+  text-align: center;
+  align-items: center;
+  padding: 14px;
+}
+
+table td button {
+  color: #fff;
+  background-color: #27997b;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  height: 30px;
+  min-width: 96px;
+  cursor: pointer;
+}
+
+table tbody tr{
+  border-bottom: 1px solid #dddddd;
+}
+
+table .stock-table-body tr:last-of-type{
+  border-bottom: 2px solid #009879;
+}
+
+.wrapper-portfolio {
+  height: 92vh;
+  width: 100%;
+  padding: 2rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-portfolio {
+  height: 40.7rem;
+  width: 80rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.thead-portfolio{
+  /* background-color: rgb(78, 111, 181); */
+  background-color: rgb(29, 49, 87);
+}
+
+.thead-portfolio tr th:first-child{
+  width: 40%;
+}
+
+.thead-portfolio tr th:nth-child(2){
+  width: 20%;
+}
+
+.thead-portfolio tr th:nth-child(3){
+  width: 20%;
+}
+
+.portfolio-sell {
+  color: #fff;
+  background-color: rgb(66, 89, 130);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  height: 30px;
+  min-width: 96px;
+  cursor: pointer;
+}
+
+table .portfolio-table-body tr:last-of-type{
+  border-bottom: 2px solid rgb(29, 49, 87);
+}
+
+.portfolio-footer {
+  height: 3.4rem;
+  width: 80rem;
+  padding: 4px;
+  display: flex;
+  justify-content: end;
+}
+
+.balance {
+  font-size: 0.9em;
+}
+
+.balance p .first {
+  margin-left: 10px;
+}
+
+.balance p .last {
+  margin-left: 70px;
+}
+
