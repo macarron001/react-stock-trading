@@ -31,11 +31,11 @@ const Login = () => {
       </header>
       <main>
         <div className="sub-header">
-          <h1>Sign in to Lacks</h1>
+          <h1>Sign in to Stock</h1>
           <div>
             <p>
-              We suggest using the{" "}
-              <strong>email address you use at work.</strong>
+              Trading made easy {" "}
+              {/* <strong></strong> */}
             </p>
           </div>
         </div>
@@ -72,10 +72,10 @@ const Login = () => {
         </div>
       </main>
       <div className="registered">
-        <p> New to Lacks?</p>
+        <p> New to Stock?</p>
       </div>
       <footer>
-        <div>© 2022 Raphael Padua and Ronny Pinoon</div>
+        <div>© 2022 Ronny Pinoon</div>
       </footer>
     </div>
   )
