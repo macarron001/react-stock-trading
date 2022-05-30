@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap");
+
 *,
 *::before,
 *::after {
@@ -5,6 +7,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: medium;
+  font-family: "Lato", sans-serif;
+  line-height: 1.46668;
+  font-weight: 400;
+  color: #1d1c1d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
 
 .wrapper {
   height: 100vh;
@@ -40,6 +57,17 @@
   align-items: flex-end;
   padding-right: 30px;
   font-size: 13.5px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-inline: auto;
+  width: min(90%, 70.5rem);
+  max-width: 800px;
 }
 
 .main-register {
@@ -79,9 +107,31 @@
   cursor: pointer;
 }
 
+.btn-login {
+  color: #fff;
+  background-color: #154b3d;
+  border-radius: 4px;
+  font-size: 22px;
+  font-weight: 900;
+  height: 44px;
+  min-width: 96px;
+  padding: 0 16px 3px;
+  margin-top: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+
 form {
   text-align: center;
   margin: 0 180px;
+}
+
+.form-container {
+  margin-top: 3rem;
+}
+
+.form-container span {
+  color: red;
 }
 
 form input {
@@ -100,6 +150,23 @@ form input {
   font-size: 0.9rem;
 }
 
+.registered p {
+  color: rgb(129, 128, 128);
+}
+
+.registered a {
+  text-decoration: none;
+}
+
+form div span {
+  font-size: 1rem;
+  color: red;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
 footer {
   text-align: center;
   align-items: center;
@@ -112,4 +179,12 @@ footer div {
   margin: 8px;
   font-size: 1.1rem;
   color: rgb(148, 145, 145);
+}
+
+.sub-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 20px;
 }
