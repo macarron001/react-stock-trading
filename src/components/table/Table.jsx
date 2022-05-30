@@ -70,7 +70,6 @@ const Table = () => {
 
           <tbody className='stock-table-body'>
             {stocks !== "" && stocks.map((stock) => {
-              console.log(stock.symbol);
               return (
                 <Row key={stock.symbol} stock={stock} />
               )

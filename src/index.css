@@ -391,3 +391,23 @@ table .transaction-table-body tr:last-of-type{
   cursor: pointer;
 }
 
+.btn-create-user{
+  color: rgb(11, 11, 11);
+  background-color: rgb(247, 249, 250);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  height: 40px;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.horizontal-ruler {
+  height: 1px;
+  width: 445px;
+  border: none;
+  border-top: 1px solid #ddd;
+  clear: both;
+  margin-top: 50px;
+}
+

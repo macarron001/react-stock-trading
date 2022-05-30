@@ -71,7 +71,7 @@ const Portfolio = () => {
               {stocks !== "" && stocks.map((stock) => {
                 console.log(stock.symbol);
                 return (
-                  <tr>
+                  <tr key={stock.symbol}>
                     <td>{stock.symbol}</td>
                     <td>{stock.company_name}</td>
                     <td>{stock.price}</td>

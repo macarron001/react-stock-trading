@@ -68,10 +68,6 @@ const Register = () => {
         <div className="sub-header-register">
           <h1>Let's set you up with an account first!</h1>
           <div>
-            {/* <p>
-              We suggest using the{" "}
-              <strong>email address you use at work.</strong>
-            </p> */}
           </div>
         </div>
         <div className="form-container-register">

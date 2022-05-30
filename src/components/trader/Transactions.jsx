@@ -95,7 +95,7 @@ const Transactions = () => {
               {transactions !== "" && transactions.map((transaction) => {
                 const total = (transaction.price) * (transaction.quantity)
                 return (
-                  <tr>
+                  <tr key={transaction.symbol}>
                     <td>{transaction.symbol}</td>
                     <td>{transaction.quantity}</td>
                     <td>₱ {transaction.price}</td>
