@@ -1,18 +1,17 @@
-import React from 'react'
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { useEffect } from "react";
-import axios from "axios";
+import React from "react"
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+import { useEffect } from "react"
+import axios from "axios"
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
   password: yup.string(),
   confirmedPassword: yup.string().oneOf([yup.ref("password"), null]),
-});
+})
 
 const Register = () => {
-
   const {
     register,
     handleSubmit,
@@ -21,47 +20,49 @@ const Register = () => {
     setError,
   } = useForm({
     resolver: yupResolver(schema),
-  });
+  })
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      const values = getValues();
-      axios
-        .post(`http://127.0.0.1:3001/signup`, {
-          email: values.email,
-          password: values.password,
-          password_confirmation: values.confirmPass,
-          mode: "no-cors",
-        })
+      const values = getValues()
+      axios({
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        url: "http://localhost:3001/signup",
+        data: {
+          user: {
+            email: values.email,
+            password: values.password,
+          },
+        },
+      })
         .then((res) => {
-          console.log(res);
+          console.log(res)
         })
         .catch((error) => {
-          const { full_messages, ...errors } = error.response.data.errors;
+          const { full_messages, ...errors } = error.response.data.errors
           Object.keys(errors).forEach((name) => {
             setError(name, {
               type: "manual",
               message: error.response.data.errors.full_messages[0],
-            });
-          });
-        });
+            })
+          })
+        })
     }
-  }, [isSubmitSuccessful]);
-
+  }, [isSubmitSuccessful])
 
   const onSubmit = (form, e) => {
-    e.preventDefault();
-  };
-
+    e.preventDefault()
+  }
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <header>
         <div></div>
-        <div className='center-column'>
+        <div className="center-column">
           <h1>LOGO</h1>
         </div>
-        <div className='right-column'></div>
+        <div className="right-column"></div>
       </header>
       <div className="main-register">
         <div className="sub-header-register">
@@ -102,7 +103,9 @@ const Register = () => {
                 placeholder="confirm password"
                 {...register("confirmedPassword")}
               ></input>
-              <span>{errors.confirmedPassword && "password does not match"}</span>
+              <span>
+                {errors.confirmedPassword && "password does not match"}
+              </span>
             </div>
             <button className="btn-signup" type="submit">
               Sign Up
