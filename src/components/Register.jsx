@@ -1,7 +1,59 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useEffect } from "react";
+import axios from "axios";
+
+const schema = yup.object().shape({
+  email: yup.string().email().required(),
+  password: yup.string(),
+  confirmedPassword: yup.string().oneOf([yup.ref("password"), null]),
+});
 
 const Register = () => {
+
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors, isSubmitSuccessful },
+    setError,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      const values = getValues();
+      axios
+        .post(`http://127.0.0.1:3001/signup`, {
+          email: values.email,
+          password: values.password,
+          password_confirmation: values.confirmPass,
+          mode: "no-cors",
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => {
+          const { full_messages, ...errors } = error.response.data.errors;
+          Object.keys(errors).forEach((name) => {
+            setError(name, {
+              type: "manual",
+              message: error.response.data.errors.full_messages[0],
+            });
+          });
+        });
+    }
+  }, [isSubmitSuccessful]);
+
+
+  const onSubmit = (form, e) => {
+    e.preventDefault();
+  };
+
+
   return (
     <div className='wrapper'>
       <header>
@@ -22,7 +74,7 @@ const Register = () => {
           </div>
         </div>
         <div className="form-container-register">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <div>
               <input
                 required
@@ -30,25 +82,27 @@ const Register = () => {
                 id="email"
                 name="email"
                 placeholder="email"
+                {...register("email")}
               ></input>
-              <span></span>
+              <span>{errors.email?.message}</span>
               <input
                 required
                 type="password"
                 id="password"
                 name="password"
                 placeholder="password"
+                {...register("password")}
               ></input>
-              <span></span>
+              <span>{errors.password?.message}</span>
               <input
                 required
                 type="password"
                 id="confirmedPassword"
                 name="confirmedPassword"
                 placeholder="confirm password"
+                {...register("confirmedPassword")}
               ></input>
-              <span>
-              </span>
+              <span>{errors.confirmedPassword && "password does not match"}</span>
             </div>
             <button className="btn-signup" type="submit">
               Sign Up
