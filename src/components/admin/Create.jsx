@@ -1,13 +1,17 @@
-import React from 'react'
 import { IoIosClose }from 'react-icons/io' 
 
-const Create = () => {
+const Create = ({ setIsCreatingUser }) => {
+
+  const handleClick = () => {
+    setIsCreatingUser(false)
+  }
+
   return (
     <div className='wrapper-portfolio'>
       <div className='create-wrapper'>
         <div className='create'>
           <div className="popup-channel">
-            <IoIosClose />
+            <IoIosClose onClick={handleClick}/>
           </div>
           <div className="main-register">
             <div className="sub-header-register">

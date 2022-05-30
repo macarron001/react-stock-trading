@@ -1,7 +1,9 @@
-import React from 'react'
+import { useState } from "react";
 import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './NavElements'
 
 const Navbar = () => {
+  const [role, setRole] = useState("admin");
+
   return (
     <>
       <Nav>
@@ -9,7 +11,7 @@ const Navbar = () => {
           <h1>Logo</h1>
         </NavLink>
         <Bars />
-        <NavMenu>
+        {role != 'admin'? <NavMenu>
           <NavLink to="/Stocks" activeStyle>
             Stocks
           </NavLink>
@@ -20,6 +22,16 @@ const Navbar = () => {
             Transactions
           </NavLink>
         </NavMenu>
+        :
+        <NavMenu>
+          <NavLink to="/pending" activeStyle>
+            Pending
+          </NavLink>
+          <NavLink to="/traders" activeStyle>
+            Traders
+          </NavLink>
+        </NavMenu>
+        }
         <NavBtn>
           <NavBtnLink to='/logout'>Log Out</NavBtnLink>
         </NavBtn>
