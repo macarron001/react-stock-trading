@@ -1,7 +1,9 @@
+import "./index.css"
+import Register from "./components/Register"
 
 function App() {
   return (
-    HI
+    <Register />
   );
 }
 
