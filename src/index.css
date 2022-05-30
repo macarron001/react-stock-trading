@@ -224,7 +224,7 @@ table {
 
 table thead {
   height: 60px;
-  background-color: #009879;
+  background-color: rgb(29, 49, 87);
   color: white;
 }
 
@@ -254,7 +254,7 @@ table tbody tr{
 }
 
 table .stock-table-body tr:last-of-type{
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid rgb(29, 49, 87);
 }
 
 .wrapper-portfolio {
@@ -317,13 +317,31 @@ table .portfolio-table-body tr:last-of-type{
 
 .balance {
   font-size: 0.9em;
+  padding: 5px;
 }
 
 .balance p .first {
-  margin-left: 10px;
+  margin-left: 24px;
 }
 
 .balance p .last {
-  margin-left: 70px;
+  margin-left: 10px;
+}
+
+.container-transaction {
+  min-height: 35rem;
+  width: 100rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.transaction-table-body {
+  min-height: 35rem;
+  width: 100rem;
+}
+
+table .transaction-table-body tr:last-of-type{
+  border-bottom: 2px solid rgb(29, 49, 87);
 }
 
