@@ -46,7 +46,7 @@ const Portfolio = () => {
       symbol : 'GRF',
       company_name : 'HEHE',
       price : 2.00,
-    },
+    },  
     {
       symbol : 'GRG',
       company_name : 'HEHE',
@@ -84,8 +84,8 @@ const Portfolio = () => {
       </div>
       <div className="portfolio-footer">
         <div className="balance">
-          <p>PORTFOLIO TOTAL: <span className="first">P10,000.00</span> </p>
-          <p>BALANCE: <span className="last">P10,000.00</span></p>
+          <p>Investment Total: <span className="first">P10,000.00</span> </p>
+          <p>Remaining Balance: <span className="last">P10,000.00</span></p>
         </div>
       </div>
     </div>
